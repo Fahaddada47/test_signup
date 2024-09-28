@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services'  // Google Services plugin for Firebase
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.test_signup"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.test_signup"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-auth:23.0.0'  // Firebase Auth
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'  // Google Sign-In
+}
+
+// Apply Google Services Plugin
+apply plugin: 'com.google.gms.google-services'
+
+flutter {
+    source = "../.."
+}
