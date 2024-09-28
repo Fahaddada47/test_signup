@@ -2,12 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
-// Google Sign-In
 Future<User?> signInWithGoogle() async {
   try {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     if (googleUser == null) {
-      // User canceled the sign-in process
       return null;
     }
 

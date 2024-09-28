@@ -44,7 +44,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               );
             } else {
-              // Handle the case where user is null (e.g., if sign-in failed)
               return const Text('User is not signed in.');
             }
           },

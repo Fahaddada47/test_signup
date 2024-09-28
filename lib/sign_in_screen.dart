@@ -27,7 +27,6 @@ class SignInScreen extends StatelessWidget {
               child: const Text("Sign in with Google"),
             ),
             const SizedBox(height: 20),
-            // Uncomment to add Facebook sign-in functionality
             // ElevatedButton(
             //   onPressed: () async {
             //     User? user = await signInWithFacebook();

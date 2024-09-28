@@ -20,10 +20,8 @@ class AuthService extends StatelessWidget {
             body: Center(child: Text("Error occurred")),
           );
         } else if (snapshot.hasData) {
-          // If the user is signed in, show HomeScreen
           return HomeScreen();
         } else {
-          // If no user is signed in, show SignInScreen
           return SignInScreen();
         }
       },
