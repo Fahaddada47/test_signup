@@ -25,6 +25,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
     }
 
     buildTypes {
@@ -32,11 +33,18 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
     implementation 'com.google.firebase:firebase-auth:23.0.0'  // Firebase Auth
     implementation 'com.google.android.gms:play-services-auth:21.2.0'  // Google Sign-In
+    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
+    implementation("com.google.firebase:firebase-inappmessaging-display")
+    implementation("com.google.firebase:firebase-analytics")
 }
 
 // Apply Google Services Plugin
